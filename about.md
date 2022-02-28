@@ -8,7 +8,8 @@ permalink: /about/
 
 ### More Information
 
-A place to include any other types of information that you'd like to include about yourself.
+마포청년일자리 앱개발 및 UX,UL 디자인에 참여하고 있습니다.
+앱개발하며 느낀 점들을 포스팅하려 합니다.
 
 ### Contact me
 [email@domain.com](mailto:email@domain.com)
