@@ -12,4 +12,4 @@ permalink: /about/
 앱개발하며 느낀 점들을 포스팅하려 합니다.
 
 ### Contact me
-[email@domain.com](mailto:email@domain.com)
+[superpowerkdg@gmail.com](mailto:superpowerkdg@gmail.com)
