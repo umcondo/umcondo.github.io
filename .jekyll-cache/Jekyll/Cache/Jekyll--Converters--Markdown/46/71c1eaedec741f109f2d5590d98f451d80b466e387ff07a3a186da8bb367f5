@@ -1,0 +1,33 @@
+I"�<ul>
+  <li>
+    <p>html, css, javascript - ms에서 개발한 visual studio code로 편하게 작업할 수 있다.</p>
+  </li>
+  <li>visual studio code 팁
+    <ul>
+      <li>beauty를 이용해 ctrl + shift + B 로 코드를 자동으로 정리가능</li>
+      <li>각종 theme로 다양한 배경 가능 ex) material</li>
+      <li>Live server로 현재 html문서를 로컬서버에서 새로고침 없이 볼 수 있음</li>
+      <li>주석 색깔 변경 가능</li>
+      <li>shift + Alt + 드래그 로 여러줄 동시 코딩가능</li>
+      <li>! + tap키 로 html5의 기본적인 구조 코드 불러오기 가능</li>
+      <li>html태그를 &lt; &gt; 없이 태그이름만 써서 엔터치면 자동완성 가능</li>
+      <li>tr, td 태그는 tr<em>3&gt;td</em>6 같은 형식으로 입력시 3개 행(row) 6개 열(col) 테이블생성</li>
+      <li>주석 단축키는 ctrl + /</li>
+      <li>하나의 행 복사 붙여넣기 단축키는 shift + Alt + 화살표 위, 아래</li>
+    </ul>
+  </li>
+  <li>유용한 사이트
+    <ul>
+      <li>프론트엔드 개발자 로드맵 : https://roadmap.sh/frontend</li>
+      <li>생활코딩 : https://opentutorials.org/course/3084/18403</li>
+      <li>자바스크립트 초보자 무료강의 : https://opentutorials.org/course/3084/18403</li>
+      <li>html, css등 튜토리얼 tcpschool : http://www.tcpschool.com/css/css_position_float</li>
+      <li>html, css등 튜토리얼 w3school : https://www.w3schools.com/</li>
+      <li>파일 배포 : https://app.netlify.com/</li>
+      <li>css 프레임워크 bootstrap : https://getbootstrap.com/docs/4.6/getting-started/introduction/</li>
+      <li>무료 html 템플릿 : https://www.free-css.com/free-css-templates/page255/constructive</li>
+    </ul>
+  </li>
+</ul>
+
+:ET
