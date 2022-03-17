@@ -14,7 +14,7 @@ avatar: https://avatars.githubusercontent.com/u/99419366?s=96&v=4
 #
 # Flags below are optional
 #
-futrue: true
+# futrue: true
 
 # Includes an icon in the footer for each username you enter
 footer-links:
@@ -50,6 +50,7 @@ url: https://umcondo.github.io/
 # then add in the baseurl here, like this: "/repository-name"
 baseurl: ""
 
+timezone: Asia/Seoul
 #
 # !! You don't need to change any of the configuration flags below !!
 #
@@ -86,4 +87,3 @@ exclude:
   - README.md
   - CNAME
 
-timezone: Asia/Seoul
