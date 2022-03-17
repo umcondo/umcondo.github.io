@@ -1,0 +1,35 @@
+I"<p>[윈도우10 기준]</p>
+
+<p>umcondo/github.io로 접속하면 수정하고 5~10분정도 소요되므로 로컬 컴퓨터로 vscode를 이용하여 블로그 포스팅 및 수정을 하려고 한다.</p>
+
+<ol>
+  <li>
+    <p>vscode 설치</p>
+  </li>
+  <li>
+    <p>루비 설치 (버전확인 cmd에서 ruby -v)</p>
+  </li>
+  <li>
+    <p>지킬 설치 
+ 1) gem install jekyll bundler - 5~10분 소요</p>
+
+    <p>2) gem install webrick - 이거 설치안하면 jekyll serve이 오류난다.</p>
+  </li>
+  <li>
+    <p>vscode 터미널에서 jekyll serve 입력 후 <a href="http://127.0.0.1:4000/">http://127.0.0.1:4000/</a></p>
+  </li>
+  <li>
+    <p>마크다운 문법 숙달….</p>
+  </li>
+</ol>
+
+<p>참고 블로그</p>
+
+<ul>
+  <li><a href="http://mooonchivekr.blogspot.com/2020/08/windows-10-github-pages.html">http://mooonchivekr.blogspot.com/2020/08/windows-10-github-pages.html</a></li>
+  <li>
+    <p><a href="https://ogaeng.com/jekyll-blog-install/">https://ogaeng.com/jekyll-blog-install/</a></p>
+  </li>
+  <li><a href="https://cjy-tech.github.io/Themes-for-jekyll-blog/">https://cjy-tech.github.io/Themes-for-jekyll-blog/</a></li>
+</ul>
+:ET

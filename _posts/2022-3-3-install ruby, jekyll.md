@@ -8,9 +8,13 @@ umcondo/github.io로 접속하면 수정하고 5~10분정도 소요되므로 로
 
 1. vscode 설치
 
-2. 루비 설치
+2. 루비 설치 (버전확인 cmd에서 ruby -v)
 
-3. 지킬 설치
+3. 지킬 설치 
+
+    1) gem install jekyll bundler - 5~10분 소요
+
+    2) gem install webrick - 이거 설치안하면 jekyll serve이 오류난다.
 
 4. vscode 터미널에서 jekyll serve 입력 후 [http://127.0.0.1:4000/](http://127.0.0.1:4000/)  
 

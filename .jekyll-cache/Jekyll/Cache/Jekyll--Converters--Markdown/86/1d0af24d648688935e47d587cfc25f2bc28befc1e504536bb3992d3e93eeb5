@@ -1,0 +1,43 @@
+I"�<p>html, css를 손에 익히고, 공부할 겸 네이버, 구글 클론 코딩을 해보았다.</p>
+
+<h2>네이버 클론코딩</h2>
+
+<p><a href="https://codingbroker.tistory.com/115">https://codingbroker.tistory.com/115</a> 블로그를 참고해서 클론코딩을 했다.</p>
+
+<p>header, main, footer로 나누어 작업하는 것과 flex, grid에 대해 알 수 있었다.</p>
+
+<p>코드들은 깃허브 <a href="https://github.com/umcondo/NaverCloneCoding">https://github.com/umcondo/NaverCloneCoding</a>에 정리했다.</p>
+
+<h3>header</h3>
+<p><img src="./../images/html-css/naver-header.JPG" alt="네이버헤더" /></p>
+
+<h3>main</h3>
+<p><img src="./../images/html-css/naver-main.JPG" alt="네이버메인" /></p>
+
+<h4>footer</h4>
+<p><img src="./../images/html-css/naver-footer.JPG" alt="네이버푸터" /></p>
+
+<h2>구글 클론코딩</h2>
+
+<p>네이버 클론코딩과 html, css공부한 것을 바탕으로 구글 클론코딩을 참고없이 직접해보았다.</p>
+
+<p>막히는 부분은 google 홈페이지를 크롬개발자도구를 이용해 알아보았고, 모르는 태그는 구글 검색으로 찾았다.</p>
+
+<p>flex 다루는 법을 익힐 수 있었다.</p>
+
+<p>이번엔 favicon도 넣었다.</p>
+
+<p><img src="./../images/html-css/google-favicon.JPG" alt="구글파비콘" /></p>
+
+<p>구현중에 제일 재밌었던 점은 아래 그림과 같이 검색 창에서 마이크에 커서가 가면 밑에 상세설명이 나오게하는 것이었다.</p>
+
+<p><img src="./../images/html-css/google-keybo.JPG" alt="상세설명" />
+<img src="./../images/html-css/google-googleapp.JPG" alt="상세설명" /></p>
+
+<p>w3cschool에서 how-to -&gt; dropbox 부분을 참고하여 position:absolute와 :hover, display:block, display:none을 이용해서 만들었다.</p>
+
+<h3>전체 이미지</h3>
+<p><img src="./../images/html-css/google-main.JPG" alt="구글클론코딩" /></p>
+
+<p><img src="./../images/html-css/google-cant.JPG" alt="구글클론코딩반응형웹필요" /></p>
+:ET
