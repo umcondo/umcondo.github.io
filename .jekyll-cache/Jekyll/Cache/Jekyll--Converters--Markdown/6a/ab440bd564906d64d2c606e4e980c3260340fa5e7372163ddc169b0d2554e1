@@ -1,0 +1,36 @@
+I""<p>일과시간에 HTML,CSS,JAVASCRIPT를 학습하며 만들었던 것들이다.
+배포는 GITHUB와 연동하여 netlify를 이용하였다.</p>
+
+<ol>
+  <li>
+    <p>고양이사이트 : 배경으로 비디오를 넣어보고 오디오 태그 사용 및 input 태그를 학습했다.</p>
+
+    <p>배포 : <a href="https://umcondostorage.netlify.app/cat.html">https://umcondostorage.netlify.app/cat.html}(https://umcondostorage.netlify.app/cat.html</a></p>
+  </li>
+  <li>
+    <p>유령 : 수코딩 유튜브를 보고 클론 코딩했다. DOM 처리, event처리와 css 기술들을 익힐 수 있었다.</p>
+
+    <p>배포 : <a href="https://umcondostorage.netlify.app/snow_ghost.html">https://umcondostorage.netlify.app/snow_ghost.html</a></p>
+
+    <p>유령 참고 : <a href="https://www.youtube.com/watch?v=S48MuZq1gOU">https://www.youtube.com/watch?v=S48MuZq1gOU</a></p>
+
+    <p>눈배경 참고 : <a href="https://www.youtube.com/watch?v=jmDace5VPDM">https://www.youtube.com/watch?v=jmDace5VPDM</a></p>
+  </li>
+  <li>
+    <p>카카오지도 API : 카카오에서 지도 API를 가지고 와서 마포일자리센터의 위치를
+지도에 찍어보았다. API사용법과 DOM 조작을 익혔다.</p>
+
+    <p>배포 : <a href="https://umcondostorage.netlify.app/map.html">https://umcondostorage.netlify.app/map.html</a></p>
+  </li>
+  <li>
+    <p>마포회원가입, 마포로그인페이지 : 회원가입, 로그인 페이지를 임의로 html,css를 이용해 만들어보았다.</p>
+
+    <p>회원가입 : <a href="https://umcondostorage.netlify.app/mapo_join">https://umcondostorage.netlify.app/mapo_join</a></p>
+
+    <p>로그인 : <a href="https://umcondostorage.netlify.app/mapo_login.html">https://umcondostorage.netlify.app/mapo_login.html</a></p>
+  </li>
+  <li>
+    <p>수코딩 유튜브를</p>
+  </li>
+</ol>
+:ET

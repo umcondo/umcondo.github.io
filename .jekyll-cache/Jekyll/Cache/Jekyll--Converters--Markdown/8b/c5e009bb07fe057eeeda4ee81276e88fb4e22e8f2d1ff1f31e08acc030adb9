@@ -1,0 +1,21 @@
+I"�<p>일과시간에 HTML,CSS,JAVASCRIPT를 학습하며 만들었던 것들이다.
+배포는 GITHUB와 연동하여 netlify를 이용하였다.</p>
+
+<ol>
+  <li>
+    <p>고양이사이트 : 배경으로 비디오를 넣어보고 오디오 태그 사용 및 input 태그를 학습했다.</p>
+
+    <p>배포 : <a href="https://umcondostorage.netlify.app/cat.html">https://umcondostorage.netlify.app/cat.html}(https://umcondostorage.netlify.app/cat.html</a></p>
+  </li>
+  <li>
+    <p>유령 : 수코딩 유튜브를 보고 클론 코딩했다. DOM 처리, event처리와 css 기술들을 익힐 수 있었다.</p>
+
+    <p>배포 : <a href="https://umcondostorage.netlify.app/snow_ghost.html">https://umcondostorage.netlify.app/snow_ghost.html</a></p>
+
+    <p>유령 : <a href="https://www.youtube.com/watch?v=S48MuZq1gOU">https://www.youtube.com/watch?v=S48MuZq1gOU</a>
+눈배경 : (https://www.youtube.com/watch?v=jmDace5VPDM]{https://www.youtube.com/watch?v=jmDace5VPDM}</p>
+  </li>
+</ol>
+
+<p>3.</p>
+:ET

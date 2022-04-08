@@ -1,0 +1,59 @@
+I"�<p>일과시간에 HTML,CSS,JAVASCRIPT를 학습하며 만들었던 것들이다.
+배포는 GITHUB와 연동하여 netlify를 이용하였다.</p>
+
+<ol>
+  <li>
+    <h2>스타벅스 클론 코딩</h2>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>![스타벅스](../images/4-8-clone_coding_posting/starbucks.PNG)
+코딩알려주는누나 유튜브를 참고했다. 인터렉티브 웹을 만들때 이용했던 윈도우 스크롤 위치에 따른 이벤트 처리를 혼자 구현해봤다.
+
+배포 : [https://umcondostorage.netlify.app/starbucks.html](https://umcondostorage.netlify.app/starbucks.html)
+</code></pre></div>    </div>
+
+    <p><br /><br /></p>
+  </li>
+  <li>
+    <h2>자바스크립트를 이용한 타이핑 이펙트</h2>
+    <p><img src="../images/4-8-clone_coding_posting/typing.PNG" alt="타이핑이펙트" />
+수코딩 유튜브를 보고 클론 코딩했다.
+Math를 이용한 랜덤숫자 반환과 setTimeout, setInterval에 대해 공부했다.</p>
+
+    <p>배포 : <a href="https://umcondostorage.netlify.app/typing_effect.html">https://umcondostorage.netlify.app/typing_effect.html</a></p>
+
+    <p>유튜브 참고 주소 : <a href="https://www.youtube.com/watch?v=e56H5n1SvEs">https://www.youtube.com/watch?v=e56H5n1SvEs</a></p>
+  </li>
+  <li>
+    <h2>유령</h2>
+    <p><img src="../images/4-8-clone_coding_posting/ghost.PNG" alt="유령" />
+수코딩 유튜브를 보고 클론 코딩했다. DOM 처리, event처리와 css 기술들을 익힐 수 있었다.</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>배포 : [https://umcondostorage.netlify.app/snow_ghost.html](https://umcondostorage.netlify.app/snow_ghost.html)
+
+유령 참고 : [https://www.youtube.com/watch?v=S48MuZq1gOU](https://www.youtube.com/watch?v=S48MuZq1gOU)
+
+눈배경 참고 : [https://www.youtube.com/watch?v=jmDace5VPDM](https://www.youtube.com/watch?v=jmDace5VPDM)
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <h2>nav underbar</h2>
+    <p><img src="../images/4-8-clone_coding_posting/navBar.PNG" alt="nav underbar" /><br />
+유투브에서 코딩알려주는누나를 참고하여 혼자 만들고 팀원들과 공유하여 코드를 새롭게 만들었다.
+처음엔 getBoundingClientrect()을 쓰고 vh,vw를 써서 만들었다. offset과 window.onresize를 이용하여 더 쉽게 만들 수 있었다.
+요소의 좌표, 높이, 너비를 반환하는 기술들에 대해 배웠고, DOM 이벤트 처리에 대해 경험을 쌓을 수 있었다.</p>
+
+    <p>배포 : <a href="https://umcondostorage.netlify.app/nav_underbar.html">https://umcondostorage.netlify.app/nav_underbar.html</a></p>
+  </li>
+  <li>
+    <h2>인터렉티브 웹 연습</h2>
+    <p><img src="../images/4-8-clone_coding_posting/interactiveWeb.PNG" alt="인터렉티브 웹" /></p>
+
+    <p>javascript를 이용해 bbc 인터렉티브 웹(<a href="https://www.bbc.com/korean/resources/idt-48d3c9a7-4063-4289-9726-611b5ea9d7b5">https://www.bbc.com/korean/resources/idt-48d3c9a7-4063-4289-9726-611b5ea9d7b5</a>)를 비슷하게 클론코딩하는 것을 공부했다. 인프런에서 1분코딩을 보고 학습했다.
+인터렉티브 웹의 어려움을 느꼈다. css에서 transition과 transform을 사용하고, javascript로 스크롤 이벤트에 따라 요소의 transform을 발동하는 로직을 구현해보았다.
+css에서 block요소의 마진병합 현상에 대해 공부해 보았다. IntersectionObserver와 dataset에 대한 경험을 쌓을 수 있었다.</p>
+
+    <p>배포 : <a href="https://umcondostorage.netlify.app/bbcinteractiveweb/">https://umcondostorage.netlify.app/bbcinteractiveweb/</a></p>
+
+    <p>인프런 : <a href="https://www.inflearn.com/course/bbc-%EC%9D%B8%ED%84%B0%EB%9E%99%ED%8B%B0%EB%B8%8C%EC%9B%B9-%ED%81%B4%EB%A1%A0/dashboard">https://www.inflearn.com/course/bbc-%EC%9D%B8%ED%84%B0%EB%9E%99%ED%8B%B0%EB%B8%8C%EC%9B%B9-%ED%81%B4%EB%A1%A0/dashboard</a></p>
+  </li>
+</ol>
+:ET
