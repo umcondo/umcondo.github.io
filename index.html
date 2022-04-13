@@ -5,16 +5,15 @@ layout: default
 <div class="posts">
   {% for post in site.posts %}
   <article class="post">
-    <h1 style="margin: 0 0 0 0; float: left">
+    <h1>
       <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
     </h1>
-    <div style="text-align: right; float: right; margin-top: 20px ;">
-      {{ post.date | date: "%Y-%m-%d" }}
-    </div>
 
     <div class="entry" style="clear: both">{{ post.excerpt }}</div>
 
-    <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
+    <!-- <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a> -->
+
+    <div class="post_date">{{ post.date | date: "%Y년 %m월 %d일" }}</div>
   </article>
   {% endfor %}
 </div>

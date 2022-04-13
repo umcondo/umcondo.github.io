@@ -7,6 +7,10 @@
 
 @import "reset";
 @import "variables";
+@font-face {
+  font-family: "Apple SD Gothic Neo";
+  src: url("assets/Apple+산돌고딕+Neo/AppleSDGothicNeoL.ttf");
+}
 // Syntax highlighting @import is at the bottom of this file
 
 /**************/
@@ -15,26 +19,25 @@
 
 html {
   font-size: 100%;
-  font-family: Arial, sans-serif;
+  font-family: "Apple SD Gothic Neo", Arial, sans-serif;
 }
 
 body {
-  background: #2c2c2c;
-  font: 18px/1.4 $helvetica;
+  background: #121212;
   color: #ffffff;
   line-height: 170%;
 }
 .container-top {
   margin: 0 auto;
-  max-width: 70%;
-  padding: 0 10px;
-  width: 100%;
+  max-width: 60%;
+  padding-top: 20px;
+  padding-right: 100px;
+  // width: 100%;
 }
 .container {
   margin: 0 auto;
-  max-width: 50%;
+  width: 768px;
   padding: 0 10px;
-  width: 100%;
 }
 
 h1,
@@ -43,25 +46,49 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: $helveticaNeue;
   color: #ffffff;
   font-weight: bold;
-
+  letter-spacing: 2px;
   line-height: 1.7;
   margin: 1em 0 15px;
-  padding-bottom: 30px;
+  // padding-bottom: 30px;
 
   @include mobile {
     line-height: 1.4;
   }
 }
-.page > h1 {
-  padding-bottom: 0;
-  margin-left: 20px;
+
+.post {
+  padding: 50px 0;
 }
+
 .post > h1 {
-  padding-bottom: 0;
+  font-size: 2.1em;
+  letter-spacing: 2px;
 }
+.posts > .post h1 {
+  font-size: 1.7em;
+  letter-spacing: 2px;
+  margin: 0;
+  padding: 0;
+}
+
+.post p {
+  margin: 2px;
+  margin-left: 0;
+  letter-spacing: 0.5px;
+}
+
+.post .post_date {
+  margin-top: 30px;
+  letter-spacing: 1px;
+  color: #acacac;
+}
+
+.date b {
+  font-size: 1.1em;
+}
+
 .site-info > h1,
 .site-info > h1 > a {
   margin-left: 0px;
@@ -72,30 +99,7 @@ h1 {
 
   a {
     color: inherit;
-    margin-left: 10px;
   }
-}
-
-h2 {
-  font-size: 23px;
-  margin-left: 20px;
-  padding-bottom: 0;
-}
-
-h3 {
-  font-size: 20px;
-  margin-left: 20px;
-  padding-bottom: 0;
-}
-
-h4 {
-  font-size: 18px;
-  margin-left: 20px;
-  padding-bottom: 0;
-}
-
-p {
-  margin: 15px 0;
 }
 
 a {
@@ -154,9 +158,8 @@ img {
 }
 
 .date {
-  font-size: 15px;
-  font-style: italic;
-  color: #ffffff;
+  font-size: 1em;
+  margin-bottom: 50px;
 }
 
 // Specify the color of the selection
@@ -195,7 +198,7 @@ img {
 
 .masthead {
   padding: 20px 0;
-  border-bottom: 1px solid $lightGray;
+  // border-bottom: 1px solid $lightGray;
 
   @include mobile {
     text-align: center;
@@ -233,7 +236,6 @@ img {
   margin: 0;
   color: #f1ffff;
   cursor: pointer;
-  font-family: $helveticaNeue;
   font-weight: 500;
   font-size: 28px;
   letter-spacing: 1px;
@@ -252,7 +254,6 @@ img {
 nav {
   float: right;
   margin-top: 23px; // @TODO: Vertically middle align
-  font-family: $helveticaNeue;
   font-size: 18px;
 
   @include mobile {
@@ -263,7 +264,7 @@ nav {
   }
 
   a {
-    margin-left: 20px;
+    margin-left: 60px;
     color: #f1ffff;
     text-align: right;
     font-weight: 300;
@@ -281,8 +282,8 @@ nav {
 //
 
 .posts > .post {
-  padding: 2em 0.5em;
-  border-bottom: 1px solid rgb(179, 179, 179);
+  // padding: 2em 0.5em;
+  border-bottom: 1px solid #2a2a2a;
   // background-color: #47484c;
 }
 
@@ -315,7 +316,7 @@ nav {
   margin-top: 50px;
   // border-top: 1px solid #ddd;
   // border-bottom: 1px solid #ddd;
-  background-color: #2c2c2c;
+  background-color: #121212;
   min-height: 100px;
 }
 
