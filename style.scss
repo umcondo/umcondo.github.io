@@ -18,7 +18,7 @@
 /**************/
 
 html {
-  font-size: 100%;
+  font-size: 110%;
   font-family: "Apple SD Gothic Neo", Arial, sans-serif;
 }
 
@@ -110,6 +110,20 @@ h1 {
   }
 }
 
+.toTheTopBtn {
+  cursor: pointer;
+  display: block;
+  background: transparent;
+  color: white;
+  border: none;
+  position: fixed;
+  bottom: 10%;
+  right: 5%;
+}
+.toTheTopBtn a {
+  color: inherit;
+}
+//////////////////////////////////////////////////// 기존 /////////////////////////////////////////////////////////
 a {
   color: $blue;
   text-decoration: none;

@@ -7,7 +7,10 @@
     </title>
 
     {% include meta.html %}
-
+    <script
+      src="https://kit.fontawesome.com/2e802f42d3.js"
+      crossorigin="anonymous"
+    ></script>
     <!--[if lt IE 9]>
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -30,7 +33,7 @@
   <!-- <meta name="google-site-verification" content="nnamCSV507c_7xyoUoV690Q1dVsEBHi3ItTn5pqbQUs" /> -->
 
   <body>
-    <div class="wrapper-masthead">
+    <div class="wrapper-masthead" id="top">
       <div class="container-top">
         <header class="masthead clearfix">
           <a href="{{ site.baseurl }}/" class="site-avatar"
@@ -61,6 +64,12 @@
       </div>
     </div>
 
+    <button class="toTheTopBtn">
+      <a href="#top">
+        위로
+        <i class="fa-solid fa-angles-up fa-5x"></i>
+      </a>
+    </button>
     {% include analytics.html %}
   </body>
 </html>
