@@ -1,8 +1,0 @@
-I"<p> 1차 초안을 구현하였다. 데이터를 객체형식으로 다 바꿨다. js로직도 함수형으로 다시 썼다. css와 html도 깔끔하게 보기 편하게 리팩토링했다. 애니메이션도 추가했다.</p>
-
-<p>폰트때문인지 페이지하나에 너무 많은 걸 넣은 탓인지 처음 페이지로딩속도가 느리다.</p>
-
-<p>성능최적화를 고민해봐야겠다.</p>
-
-<p><a href="https://umcondo.github.io/mangwon_running_mate/">https://umcondo.github.io/mangwon_running_mate</a></p>
-:ET
