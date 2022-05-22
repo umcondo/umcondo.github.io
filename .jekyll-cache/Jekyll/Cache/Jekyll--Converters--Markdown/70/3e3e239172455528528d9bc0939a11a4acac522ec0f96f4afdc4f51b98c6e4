@@ -1,0 +1,20 @@
+I"K<blockquote>
+  <p>1차 과업을 마무리했다.</p>
+</blockquote>
+
+<p>배포주소 : <a href="https://umcondo.github.io/mangwon_running_mate">https://umcondo.github.io/mangwon_running_mate</a><br />
+깃허브 : <a href="https://github.com/umcondo/mangwon_running_mate">https://github.com/umcondo/mangwon_running_mate</a></p>
+
+<h2 id="이번에-수정된-부분은-다음과-같다">이번에 수정된 부분은 다음과 같다.</h2>
+
+<ul>
+  <li>
+    <p>결과 페이지에 러닝코스 사진 추가(modal 이용)</p>
+  </li>
+  <li>시작페이지 윗부분 캐릭터 사진을 애니메이션으로 바꿔 더 눈에 띄게 하였다.</li>
+  <li>시작페이지에 푸터를 추가하여, 제작자를 밝히고 마포구 로고, SNS를 추가하였다.</li>
+  <li>시작, 질문, 결과 페이지에 포인트색(주황색)을 추가하여 중요 멘트, 버튼에 포인트를 줬다.</li>
+  <li>결과페이지 제목부분을 수정하였다.</li>
+  <li>결과페이지 공유하기를 modal방식으로 구현하였고, 링크복사, 카카오톡 공유 기능을 구현했다.</li>
+</ul>
+:ET
