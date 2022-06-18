@@ -63,9 +63,15 @@ h6 {
   padding: 50px 0;
 }
 
+.post i {
+  color: yellow;
+}
 .post > h1 {
   font-size: 2.1em;
   letter-spacing: 2px;
+}
+.post h2 {
+  font-size: 1.3em;
 }
 .posts > .post h1 {
   font-size: 1.7em;
