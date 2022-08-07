@@ -1,0 +1,230 @@
+I"�'<blockquote>
+  <p>1차 과업으로 진행했던 망원러닝메이트 버그들을 수정하고 렌더링 최적화를 위해 image lazy loading 및 webpack 5를 추가했다.</p>
+</blockquote>
+
+<p>망원러닝메이트 : <a href="https://umcondo.github.io/mangwon_running_mate">https://umcondo.github.io/mangwon_running_mate</a><br />
+Github repository : <a href="https://github.com/umcondo/mangwon_running_mate">https://github.com/umcondo/mangwon_running_mate</a></p>
+
+<h2 id="webpack-도입-이유">webpack 도입 이유</h2>
+
+<p>&nbsp;망원러닝메이트는 netlify에 배포된 상태였다. 처음 배포했을때는 로딩시간이 길지 않았는데, 시간이 갈수록 로딩시간이 길어졌다. 리액트 CRA, next등 모두 웹팩을 기본 번들러로 사용한다. 이번 기회에 webpack이란 번들러와 친해지고, 기존 웹앱도 렌더링 최적화하기 위해 webpack을 도입하였다. </p>
+
+<h2 id="설정-과정">설정 과정</h2>
+
+<p><a href="https://webpack.kr/concepts/">webpack 공식 문서</a></p>
+
+<p>&nbsp;먼저 webpack 공식문서에서 코드 스플리팅 전까지 튜토리얼을 두 번 반복했다. 그러면서 최근 개발중인 정적 멀티페이지 사이트인 마청단 홈페이지에 적용해보며 익혔다. 그러곤 두번째로 마포러닝메이트에 적용했다.</p>
+<p><br /></p>
+<p>&nbsp;css파일을 모듈화하고 빌드시 따로 파일로 분리하기 위해 css-loader와 MiniCssExtractPlugin을 사용했다.
+기존 index.html을 새로 빌드된 css, js, asset(img 등)과 자동으로 연결시켜주는 index.html을 만들기 위해 html-loader와 HtmlWebpackPlugin을 사용했다.
+html-loader는 기존 html파일을 모듈로 생각하고 파일안에 링크된 모든 애셋들을 모듈화하여 새로 빌드해주기 때문에 편리했다.
+js, css, html 파일을 압축하기 위해 TerserPlugin, HtmlMinimizerPlugin, CssMinimizerPlugin을 사용했다. TerserPlugin는 js파일 난독화까지 해주었다.
+</p>
+<p><br /></p>
+<p>&nbsp;vanilla js로 개발했지만 const, let, arrow function등 es6문법이 포함되어 있다. 크로스 브라우징을 위해 es6문법을 이전 js문법으로 트랜스파일링 해주는 babel을 사용하였다. webpack의 babel-loader를 통해 쉽게 설정할 수 있었다.</p>
+<p><br /></p>
+<p>&nbsp;배포를 netlify로 하고 있었다. 기존에는 root directory의 index.html을 활용했었는데, 웹팩 빌드 후엔 dist/index.html를 배포해야했다. netlify에서 Build &amp; deploy tap -&gt; Build settings 탭에서 Publish directory를 dist, build command를 npm run build로 하여 배포 폴더를 변경하고 빌드를 자동화하였다.</p>
+
+<h2 id="느낀-점">느낀 점</h2>
+
+<p>&nbsp;모듈 번들링이 뭔지 웹팩이 왜 좋은지에 대해 알 수 있었다. entry, output, loader, plugin이 뭔지 알 수 있었다. 웹팩으로 js, css, html 파일 모두 쉽게 압축 시킬 수 있었다. 웹팩 공식문서가 한글화도 되어있고, 따라하기도 쉽게 잘 되어있어서 생각보다 덜 헤맸다. 다른 사이트보는 것보다 역시 기본은 공식문서구나 느꼈다. 웹팩을 이용해서 구현 한 내용을 전부 이해하고 쓰진 못했다. 앞으로도 웹팩 설정을 해보면서 익숙해지고 더 자세히 공부해야겠다.. 코드 스플리팅, 이미지 용량 축소 등의 더 많은 최적화 기법이 있었지만 차근차근 알아가보려고 한다.</p>
+
+<blockquote>
+  <p>시행착오를 거친만큼 좋은 툴을 익힌 것 같아 보람이 있다 !</p>
+</blockquote>
+
+<h2 id="webpackconfigjs-code">webpack.config.js code</h2>
+
+<pre>
+<code>
+const path = require("path");
+// css 최적화 플러그인
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+// js minimize
+const TerserPlugin = require("terser-webpack-plugin");
+// html minimize
+const HtmlMinimizerPlugin = require("html-minimizer-webpack-plugin");
+// 번들링된 모듈들 참조하는 html 파일 자동 빌드해주는 플러그인
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+
+module.exports = {
+  //   mode: process.env.NODE_ENV,
+  mode: "production",
+  devtool: "hidden-source-map", // 배포용 빌드툴 개발일땐 eval을 쓰자
+  devServer: {
+    static: {
+      directory: path.join(__dirname, "dist"),
+    },
+    compress: true,
+    port: 9000,
+  },
+  entry: {
+    style: [
+      "./asset/css/default.css", // 순서대로 읽는다. 순서 유의
+      "./asset/css/result.css",
+      "./asset/css/mobile.css",
+    ],
+    main: "./asset/js/index.js",
+  },
+  output: {
+    filename: "[name].min.js",
+    path: path.resolve(__dirname, "dist"),
+    clean: true, // 안쓰는 빌드파일 삭제
+    assetModuleFilename: "asset/[name].[hash][ext]",
+    library: { name: "[name]", type: "var" },
+  },
+
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [MiniCssExtractPlugin.loader, "css-loader"],
+      },
+      // 사진파일 모듈화
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: "asset/resource",
+      },
+      {
+        test: /\.html$/,
+        loader: "html-loader",
+      },
+      // babel
+      {
+        test: /\.m?js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ["@babel/preset-env"],
+          },
+        },
+      },
+    ],
+  },
+  optimization: {
+    // 중복 코드는 번들로 만듬
+    splitChunks: {
+      chunks: "all",
+    },
+    minimize: true,
+    minimizer: [
+      new CssMinimizerPlugin(),
+      new TerserPlugin({ extractComments: false }), // license comment 안나오게
+      new HtmlMinimizerPlugin(),
+    ],
+  },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: "[name].min.css",
+    }),
+    new HtmlWebpackPlugin({
+      filename: "index.html", // 빌드 후 파일 이름
+      template: "./index.html", // 기존 빌드하고 싶은 html
+      inject: true, // 기본값 true head에 defer로 js script 삽입
+    }),
+  ],
+  performance: { hints: false }, // 빌드파일 용량 제한초과 알림 무시
+};
+
+</code>
+</pre>
+
+<h2 id="웹팩-설정-중-이슈">웹팩 설정 중 이슈</h2>
+
+<ol>
+  <li>빌드하고 싶은 파일들은 js파일(모듈)로 만들어야한다. 웹팩은 js만 알아먹는다. loader는 다른 각종 파일들을 js모듈화 해주므로 loader를 이용해 css, html, img, mp4 등등을 module화 하자
+<br /><br /></li>
+  <li>js모듈은 자체 스코프를 가지고 use strict가 기본이므로 기존 코드들의 오류를 수정해주어야했다.
+<br /><br /></li>
+  <li>
+    <p>HtmlWebpackPlugin을 적용할때 &lt;span&gt;&lt; &lt;/span&gt;이런 식으로 작성한 부분이 오류가 났다. &lt;span&gt;&amp;#60;&lt;/span&gt;로 html 특수문자를 이용하니 해결되었다.</p>
+
+    <p><br /><br /></p>
+  </li>
+  <li>빌드되는 asset들의 파일명과 빌드 폴더를 지정하기 위해 output.assetModuleFilename를 설정해주었다.
+<br /><br /></li>
+  <li>TerserPlugin을 다른 옵션 사용없이 사용하면 빌드 후 license comment 파일들이 생긴다. TerserPlugin({ extractComments: false })를 추가하여 해결하였다.
+<br /><br /></li>
+  <li>devtool 프로퍼티에 production에는 “hidden-source-map”, development에는 “eval”을 쓴다. 이는 빌드 속도, 빌드 형태와 관련있다. 자세히는 공부가 더 필요하다.
+<br /><br /></li>
+  <li>카카오맵 추가 기능을 가진 버튼을 구현하는 과정에서 html에 inline style로 javascript 함수를 실행시키는 부분이 있다. 웹팩으로 빌드 후 이 부분을 인식하지 못하는 오류가 있었다.</li>
+</ol>
+
+<h3 id="코드">코드</h3>
+
+<pre>
+<code>
+    // main.js 
+    
+    ... class="overlay_toggle_btn" onclick="toggleBtn()"&gt;`;
+
+    ...
+    function toggleBtn() {
+      // 함수 구현 내용
+    }
+    ...
+</code>
+</pre>
+
+<ul>
+  <li>output의 library속성을 이용해 해결해였다. library를 통해 main모듈에 있는 함수를 export하고 불러와서 사용했다. 또한 onclick에서 onClick으로 변경했다.
+js모듈이므로 js파일 내부에서 함수를 쓰는 문법으로 바꿔야하는 듯하다. <a href="https://webpack.kr/configuration/output/#outputlibrary">webpack공식문서</a>, <a href="https://stackoverflow.com/questions/58782902/html-inline-javascript-with-webpack">stackoverflow</a>를 참고하여 해결하였다.</li>
+</ul>
+
+<h3 id="해결-코드">해결 코드</h3>
+
+<pre>
+<code>
+    // webpack.config.js
+    ...
+    output: {
+        ...
+        library: { name: "[name]", type: "var" },
+      },
+    ...
+
+    // main.js
+
+    ... class="overlay_toggle_btn" onClick="main.toggleBtn()"&gt;`;
+
+    ...
+    export function toggleBtn() {
+      // 함수 구현 내용
+    }
+    ...
+</code>
+</pre>
+
+<h2 id="망원-러닝-메이트-추가된-점-및-버그-수정-내역">망원 러닝 메이트 추가된 점 및 버그 수정 내역</h2>
+
+<h3 id="추가된-점">추가된 점</h3>
+
+<ul>
+  <li>image lazy loading</li>
+  <li>webpack 5
+    <ul>
+      <li>css, html, js bundling, minimize</li>
+      <li>js uglify</li>
+      <li>babel</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="버그-수정">버그 수정</h3>
+
+<ul>
+  <li>이슈 : 결과페이지 스크롤 이용 시, 카카오맵이 확대되거나 축소됨</li>
+  <li>진단 : 카카오맵 스크롤, 드래그 옵션 true</li>
+  <li>해결 : map.setDraggable(false); map.setZoomable(false); 옵션 추가
+<br /><br /></li>
+  <li>이슈 : 결과 애니메이션 로딩 시 제목이 세로로 보인 후 위치가 재조정됨</li>
+  <li>진단 : position: absolute로 속성으로 인해, 이미지가 로딩되기 전에 잘못된 위치에 렌더링됨</li>
+  <li>해결 : position: relative로 변경 후 bottom 속성 변경
+<br /><br /></li>
+  <li>이슈 : 버튼에 글자 입력시 상, 하단 여백간격이 균일하지 못함</li>
+  <li>진단 : 폰트 자체적으로 상, 하단 여백을 가짐</li>
+  <li>해결 : line-height:0 으로 하여 폰트 여백을 없애고 버튼 자체의 패딩을 추가함</li>
+</ul>
+:ET
