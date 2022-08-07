@@ -7,6 +7,7 @@
 
 @import "reset";
 @import "variables";
+
 @font-face {
   font-family: "Apple SD Gothic Neo";
   src: url("assets/Apple+산돌고딕+Neo/AppleSDGothicNeoL.ttf");
@@ -59,6 +60,7 @@ h6 {
   }
 }
 
+//post
 .post {
   padding: 50px 0;
 }
@@ -115,6 +117,28 @@ h1 {
   a {
     color: inherit;
   }
+}
+
+// markdown code
+pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #161b22;
+  border-radius: 10px;
+}
+code {
+  display: inline;
+  max-width: auto;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+  color: #c9d1d9;
 }
 
 .toTheTopBtn {
