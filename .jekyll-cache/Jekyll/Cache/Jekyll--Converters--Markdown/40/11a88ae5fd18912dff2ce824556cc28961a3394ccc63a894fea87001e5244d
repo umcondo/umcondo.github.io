@@ -1,8 +1,8 @@
-I"�'<blockquote>
+I"�'<blockquote>
   <p>1차 과업으로 진행했던 망원러닝메이트 버그들을 수정하고 렌더링 최적화를 위해 image lazy loading 및 webpack 5를 추가했다.</p>
 </blockquote>
 
-<p>망원러닝메이트 : <a href="https://umcondo.github.io/mangwon_running_mate">https://umcondo.github.io/mangwon_running_mate</a><br />
+<p>망원러닝메이트 : <a href="https://mangwonrunningmate.netlify.app/">https://mangwonrunningmate.netlify.app/</a><br />
 Github repository : <a href="https://github.com/umcondo/mangwon_running_mate">https://github.com/umcondo/mangwon_running_mate</a></p>
 
 <h2 id="webpack-도입-이유">webpack 도입 이유</h2>
@@ -139,9 +139,8 @@ module.exports = {
   <li>js모듈은 자체 스코프를 가지고 use strict가 기본이므로 기존 코드들의 오류를 수정해주어야했다.
 <br /><br /></li>
   <li>
-    <p>HtmlWebpackPlugin을 적용할때 <tag>&lt; </tag>이런 식으로 작성한 부분이 오류가 났다. &lt;tag&gt;&#60;&lt;/tag&gt;로 html 특수문자를 이용하니 해결되었다.</p>
-
-    <p><br /><br /></p>
+    <p>HtmlWebpackPlugin을 적용할때 &lt;span&gt;&lt; &lt;/span&gt;이런 식으로 작성한 부분이 오류가 났다. &lt;span&gt;&amp;#60;&lt;/span&gt;로 html 특수문자를 이용하니 해결되었다.
+<br /><br /></p>
   </li>
   <li>빌드되는 asset들의 파일명과 빌드 폴더를 지정하기 위해 output.assetModuleFilename를 설정해주었다.
 <br /><br /></li>

@@ -1,4 +1,4 @@
-I"t<blockquote>
+I"e<blockquote>
   <p>1차 초안을 구현하였다.</p>
 </blockquote>
 
@@ -9,5 +9,5 @@
 첫화면에 로딩화면을 넣던가 성능최적화를 고민해봐야겠다.</p>
 
 <p><br />
-배포 : <a href="https://umcondo.github.io/mangwon_running_mate/">https://umcondo.github.io/mangwon_running_mate</a></p>
+배포 : <a href="https://mangwonrunningmate.netlify.app/">https://mangwonrunningmate.netlify.app/</a></p>
 :ET
