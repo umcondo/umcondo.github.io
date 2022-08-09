@@ -1,0 +1,11 @@
+I"A<blockquote>
+  <p>마포청년일자리사업단 페이지를 성능 최적화 해보았다.</p>
+</blockquote>
+
+<p>마포청년일자리사업단 : <a href="https://mapo-project.github.io/MaCheongDan/">https://mapo-project.github.io/MaCheongDan/</a><br />
+Github repository : <a href="https://github.com/Mapo-Project/MaCheongDan">https://github.com/Mapo-Project/MaCheongDan</a>
+<br /></p>
+
+<p>&nbsp;webpack 5, image lazy loading, image, font size 압축, font preload, woff/woff2 font 사용을 통해 
+단순한 정적 멀티페이지의 로딩 시간을 줄여보았다.</p>
+:ET

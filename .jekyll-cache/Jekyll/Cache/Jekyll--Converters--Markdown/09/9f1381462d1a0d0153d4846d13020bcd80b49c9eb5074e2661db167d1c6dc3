@@ -1,0 +1,40 @@
+I"o<blockquote>
+  <p>webpack 5, image lazy loading, image, font size 압축, font preload, woff/woff2 font 사용을 통해
+단순한 정적 멀티페이지의 로딩 시간을 줄여보았다.</p>
+</blockquote>
+
+<p>마포청년일자리사업단 : <a href="https://mapo-project.github.io/MaCheongDan">https://mapo-project.github.io/MaCheongDan/</a><br />
+Github repository : <a href="https://github.com/Mapo-Project/MaCheongDan">https://github.com/Mapo-Project/MaCheongDan</a></p>
+
+<h2 id="결과">결과</h2>
+
+<h3 id="lighthouse">LightHouse</h3>
+
+<p><img src="./../images/8-9-optimize_mcd/light_house.png" alt="LightHouse" />
+다른 부분은 부족하더라도 성능에 있어서는 최적화가 되었다.</p>
+
+<h2 id="과정">과정</h2>
+
+<ol>
+  <li>webpack을 이용해 js, css, html을 모듈화하여 번들링하였다.(main.js를 모듈화하여 2개의 js파일을 하나로 합쳤다.)</li>
+  <li>js, css, html 모두 minimize하고 js는 난독화 해주었다.</li>
+  <li>첫페이지를 제외한 이미지들에 image lazy loading를 적용하였다. 최근 브라우저에는 사파리 포함하여 img태그에 loading=’lazy’를 설정하여 쉽게 lazy loading을 구현할 수 있다.</li>
+  <li><a href="https://www.iloveimg.com/ko/compress-image">이미지 압축 사이트</a>를 통해 이미지를 압축했다. 70% 가량 압축할 수 있었다.</li>
+  <li>기존 Noto sans kr 폰트 형식을 otf에서 woff/woff2로 바꾸었다.</li>
+  <li>첫 페이지에 나오는 폰트를 빠르게 보여주기 위해 link태그의 rel=”preload” 통해 프리로딩하였다.</li>
+</ol>
+
+<h3 id="요약">요약</h3>
+
+<h2 id="분석">분석</h2>
+
+<h3 id="before">BEFORE</h3>
+
+<p><img src="./../images/8-9-optimize_mcd/before.png" alt="BEFORE" /></p>
+
+<h3 id="after">AFTER</h3>
+
+<p><img src="./../images/8-9-optimize_mcd/after.png" alt="AFTER" /></p>
+
+<h2 id="후기">후기</h2>
+:ET
