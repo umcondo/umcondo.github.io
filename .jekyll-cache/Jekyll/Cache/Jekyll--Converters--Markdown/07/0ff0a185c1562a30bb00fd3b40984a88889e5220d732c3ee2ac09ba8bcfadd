@@ -1,0 +1,17 @@
+I"�<blockquote>
+  <p>8월 초부터 시작한 이웃의마켓 프로젝트를 중간 발표하였다. 리액트 웹앱을 개발하면서 느낀점을 써보려한다.</p>
+</blockquote>
+
+<p>이웃의마켓 배포 : <a href="https://neighbors-market.netlify.app/">https://neighbors-market.netlify.app</a><br />
+Github : <a href="https://github.com/Mapo-Project/HyperLocal-frontend">https://github.com/Mapo-Project/HyperLocal-frontend</a></p>
+
+<p>
+&nbsp;이웃의마켓은 지역주민들이 같이 물품을 구매하거나 공유할 수 있도록 해주는 커뮤니티 사이트다. 사용 예시로, OTT 공동 구매, 배달비 공동 부담, 유통기한이 임박한 식품 공유 등이 있다. 당근마켓과 유사하지만 당근마켓은 중고물품 판매, 구매에 초점이 맞춰져 있고, 이웃의마켓은 공동구매, 물건공유에 초점이 있는 것이 다르다. 
+</p>
+
+<p>
+&nbsp;리액트를 여러번 써봤지만 직접 기획, 디자인된 서비스를 개발해 본 것은 처음이었다. SPA를 기반으로 실시간 서비스를 지원하는 플랫폼이기 때문에 react CRA를 사용했다.
+초기 환경은 airbnb eslint, prettier, global styled component, git convention, css convention, 폴더 구조, npm를 설정했다. 혼자 프론트엔드개발을 맡았지만
+git convention, PR을 통해 통일감을 주고, 유지보수가 편하게 했다. airbnb eslint를 통해 js, react 코드에 대한 규칙들을 되돌아보았다. 세세한 설정들은 예외처리를 했다.
+</p>
+:ET

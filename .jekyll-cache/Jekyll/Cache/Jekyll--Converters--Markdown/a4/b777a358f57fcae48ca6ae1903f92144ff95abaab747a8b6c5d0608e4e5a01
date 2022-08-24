@@ -1,0 +1,11 @@
+I"<blockquote>
+  <p>8월 초부터 시작한 이웃의마켓 프로젝트를 중간 발표하였다. 리액트 웹앱을 개발하면서 느낀점을 써보려한다.</p>
+</blockquote>
+
+<p>이웃의마켓 배포 : <a href="https://neighbors-market.netlify.app/">https://neighbors-market.netlify.app</a><br />
+Github : <a href="https://github.com/Mapo-Project/HyperLocal-frontend">https://github.com/Mapo-Project/HyperLocal-frontend</a></p>
+
+<p>
+&nbsp;이웃의마켓은 지역주민들이 같이 물품을 구매하거나 공유할 수 있도록 해주는 커뮤니티 사이트다. 사용 예시로, OTT 공동 구매, 배달비 공동 부담, 유통기한이 임박한 식품 공유 등이 있다. 당근마켓과 유사하지만 당근마켓은 중고물품 판매, 구매에 초점이 맞춰져 있고, 이웃의마켓은 공동구매, 물건공유에 초점이 있는 것이 다르다. 
+</p>
+:ET
