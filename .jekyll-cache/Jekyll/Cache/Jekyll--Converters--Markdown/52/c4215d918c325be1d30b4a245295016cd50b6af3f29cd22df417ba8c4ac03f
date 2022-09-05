@@ -1,0 +1,113 @@
+I"<blockquote>
+  <p>React.memo, React.lazy, suspense를 이용한 리액트 웹앱 성능 개선</p>
+</blockquote>
+
+<h2 id="memoization">memoization</h2>
+
+<p>
+&nbsp;memoization은 이전에 사용한 값을 저장해두고 동일한 계산 값에 대해 저장된 값을 사용하는 최적화 방법을 말한다. React에서는 useMemo, useCallback, React.memo를 이용해 memoization을 적용할 수 있다. useMemo는 값을, useCallback은 함수를 memoization하는 Hook이고, React.Memo는 컴포넌트를 memoization하는 HOC(high order component), 고차 컴포넌트다.
+</p>
+<p><br /></p>
+<p>
+&nbsp;React의 컴포넌트는 부모컴포넌트가 리렌더링될때, state, props가 변경될때 리렌더링 된다. 메인 페이지는 data state를 각 컴포넌트들에게 전달한다.
+메인 페이지에서 특정 게시글의 하트를 누른다면 그 게시글 컴포넌트만 리렌더링이 되어야한다. 하지만 하트를 누르는 순간 부모컴포넌트의 state가 변경되고, 부모컴포넌트가 리렌더링되어서 하위 컴포넌트들도 모두 리렌더링된다. 이를 해결하기 위해 useCallback과 React.memo를 사용했다.
+</p>
+<p><br /></p>
+<pre><code>// 렌더링될때마다 useNavigate()의 값이 달라져서 useCallback을 이용해 memoization하였다.
+
+    const onSelectAdditionalTown = useCallback(() =&gt; {
+    navigate('/town/regist');
+    }, [navigate]);
+
+</code></pre>
+<p><br /></p>
+
+<p>&nbsp;부모와 자식 컴포넌트를 분리하고 자식 컴포넌트에 React.memo를 이용했다.</p>
+<pre><code>// React.memo는 객체를 얕은 비교한다. 
+// 하트 값이 달라진 것만 비교하기 위해 두번째 인자로 비교함수 areEqual을 사용했다.
+
+    // 하트 변경되지 않으면 리렌더링 되지 않게
+    function areEqual(prevProps, nextProps) {
+    if (
+        prevProps.itemId === nextProps.itemId &amp;&amp;
+        prevProps.itemsHeartCount === nextProps.itemsHeartCount
+    ) {
+        return true;
+    }
+    return false;
+    }
+
+    // 자식 컴포넌트
+    const MainItems = React.memo(function MainItems({
+        ...props들
+        }){
+            return(
+                ...컴포넌트 요소
+            )
+        }, areEqual);
+
+    export default MainItems;
+
+</code></pre>
+<p><br /></p>
+
+<p>&nbsp;memoization 결과 게시글의 하트를 누르면 하트를 눌러 하트 개수가 변한 컴포넌트만 리렌더링 되었다.</p>
+<p>&nbsp;그 밖에도 signup, create 페이지를 같은 식으로 memoization하였다. react의 profile을 이용해 성능을 체크해보았다.</p>
+<p>&nbsp;다음은 signup페이지에서 id Input창에서 id값을 변경했을 때를 profile을 이용해 비교한 모습이다.</p>
+
+<h3 id="memoization-이전">memoization 이전</h3>
+
+<p><img src="./../images/9-5-react-optimize/signup_before.jpeg" alt="signup_before" /></p>
+
+<h3 id="memoization-이후">memoization 이후</h3>
+
+<p><img src="./../images/9-5-react-optimize/signup_after.png" alt="signup_after" /></p>
+
+<p>&nbsp;렌더링 시간이 2.2ms에서 0.6ms로 거의 1/4로 줄어든 것을 볼 수 있다. </p>
+
+<h2 id="code-spliting">code spliting</h2>
+
+<p>&nbsp;code spliting이란 js파일을 쪼개는 것을 말한다. 예를 들어 100mb용량의 js번들이 있다면 클라이언트에서 한번에 다운로드 받는 것은 오래걸린다. CSR의 경우 첫 화면을 로딩하는 데 시간이 오래걸릴 것이다. 100mb짜리 js파일을 여러개로 쪼개서 우선순위를 두어 로딩한다면 사용자 경험을 향상 시킬 수 있다. react CRA는 기본적으로 webpack을 사용한다. webpack을 통해 모듈들을 bundling하고 chuck로 나누어 code spliting을 할 수 있다. webpack에선 동적 import를 통해 code spliting을 할 수 있다. react에서는 동적 import를 통해 컴포넌트들을 code spliting하기 위해 React.lazy 함수를 이용한다. @loadable/component을 사용해봤지만 현재 앱에서는 lazy로도 충분히 code spliting이 가능하므로 기본 내장된 lazy와 suspense를 이용했다.</p>
+
+<p>&nbsp;보통 라우트를 기준으로 code spliting을 한다. App component에서 code spliting 하였다. fallback option을 통해 로딩중에 띄울 컴포넌트나 태그를 지정할 수 있다. fallback을 loading spinner를 넣어봤으나 오히려 UX를 헤친다고 생각해 제거했다.</p>
+
+<pre><code> // App.js 일부만 가져왔다.
+
+    // code spliting
+    const Login = lazy(() =&gt; import('./pages/Login'));
+    const SignUp = lazy(() =&gt; import('./pages/SignUp'));
+    ...
+    const Test = lazy(() =&gt; import('./pages/Test'));
+
+    ...
+    
+    
+  return (
+    &lt;&gt;
+      <ResetStyle />
+
+      &lt;BrowserRouter basename={process.env.PUBLIC_URL}&gt;
+        <Suspense>
+          <Routes>
+            &lt;Route
+              path="/"
+              element={
+                &lt;Main
+                  mainData={mainData}
+                  onClickHeart={onClickHeart}
+                  nonMemberTown={nonMemberTown}
+                /&gt;
+              }
+            /&gt;
+            &lt;Route path="/search" element={<CategorySearch />} /&gt;
+            
+            ...
+           
+            &lt;Route path="/test" element={<Test />} /&gt;
+          </Routes>
+        </Suspense>
+      &lt;/BrowserRouter&gt;
+    &lt;/&gt;
+  );
+</code></pre>
+:ET
