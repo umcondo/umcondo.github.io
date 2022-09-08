@@ -12,6 +12,7 @@
 	font-family: 'Apple SD Gothic Neo';
 	src: url('assets/Apple+산돌고딕+Neo/AppleSDGothicNeoL.ttf');
 }
+
 // Syntax highlighting @import is at the bottom of this file
 
 /**************/
@@ -21,12 +22,16 @@
 html {
 	font-size: 110%;
 	font-family: 'Apple SD Gothic Neo', Arial, sans-serif;
+
 	scroll-behavior: smooth;
 }
 
 body {
-	background: #121212;
-	color: #ffffff;
+	// background: #121212;
+	background: #fff;
+
+	// color: #ececec;
+	color: #555;
 	line-height: 170%;
 }
 .container-top {
@@ -48,7 +53,7 @@ h3,
 h4,
 h5,
 h6 {
-	color: #ffffff;
+	color: #212121;
 	font-weight: bold;
 	letter-spacing: 2px;
 	line-height: 1.7;
@@ -59,7 +64,10 @@ h6 {
 		line-height: 1.4;
 	}
 }
-
+h3 {
+	font-weight: 600;
+	font-size: 1.1rem;
+}
 //post
 .post {
 	padding: 50px 0;
@@ -69,27 +77,31 @@ h6 {
 	color: yellow;
 }
 .post > h1 {
-	font-size: 1.5em;
-	font-weight: 500;
+	font-size: 1.6rem;
+	font-weight: 600;
 	letter-spacing: 2px;
 }
 .post h2 {
-	font-size: 1.3em;
-	font-weight: 500;
+	font-size: 1.4rem;
+	font-weight: 600;
 }
 .posts > .post h1 {
-	font-size: 1.4em;
-	font-weight: 500;
+	font-size: 1.6rem;
+	font-weight: 600;
 	letter-spacing: 2px;
 	margin: 0;
 	padding: 0;
 }
 
 .post p {
-	margin: 2px;
-	margin-left: 0;
-	font-size: 0.9em;
-	letter-spacing: 0.5px;
+	font-weight: 400;
+	// font-size: 1.125rem;
+	line-height: 1.7;
+	letter-spacing: -0.004em;
+	overflow-wrap: break-word;
+	word-break: break-all;
+	font-size: 0.9375em;
+	line-height: 2;
 	text-indent: 0.5em;
 }
 
@@ -130,6 +142,7 @@ pre {
 	overflow: auto;
 	font-size: 85%;
 	line-height: 1.45;
+
 	background-color: #161b22;
 	border-radius: 10px;
 }
@@ -150,7 +163,7 @@ code {
 	cursor: pointer;
 	display: block;
 	background: transparent;
-	color: white;
+	color: #212121;
 	border: none;
 	position: fixed;
 	bottom: 10%;
@@ -287,7 +300,7 @@ img {
 
 .site-name {
 	margin: 0;
-	color: #f1ffff;
+	color: #212121;
 	cursor: pointer;
 	font-weight: 500;
 	font-size: 28px;
@@ -296,7 +309,7 @@ img {
 
 .site-description {
 	margin: -5px 0 0 0;
-	color: #c4c9c9;
+	color: #949797;
 	font-size: 16px;
 
 	@include mobile {
@@ -317,8 +330,9 @@ nav {
 	}
 
 	a {
+		color: #212112;
 		margin-left: 60px;
-		color: #f1ffff;
+
 		text-align: right;
 		font-weight: 300;
 		letter-spacing: 1px;
@@ -369,7 +383,7 @@ nav {
 	margin-top: 50px;
 	// border-top: 1px solid #ddd;
 	// border-bottom: 1px solid #ddd;
-	background-color: #121212;
+
 	min-height: 100px;
 }
 
