@@ -13,6 +13,88 @@
   src: url("assets/Apple+산돌고딕+Neo/AppleSDGothicNeoL.ttf");
 }
 
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 900;
+  font-display: swap;
+  src: local("Pretendard Black"),
+    url("assets/woff2-subset/Pretendard-Black.subset.woff2") format("woff2"),
+    url("assets/woff-subset/Pretendard-Black.subset.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 800;
+  font-display: swap;
+  src: local("Pretendard ExtraBold"),
+    url("assets/woff2-subset/Pretendard-ExtraBold.subset.woff2") format("woff2"),
+    url("assets/woff-subset/Pretendard-ExtraBold.subset.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 700;
+  font-display: swap;
+  src: local("Pretendard Bold"),
+    url("assets/woff2-subset/Pretendard-Bold.subset.woff2") format("woff2"),
+    url("assets/woff-subset/Pretendard-Bold.subset.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 600;
+  font-display: swap;
+  src: local("Pretendard SemiBold"),
+    url("assets/woff2-subset/Pretendard-SemiBold.subset.woff2") format("woff2"),
+    url("assets/woff-subset/Pretendard-SemiBold.subset.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 500;
+  font-display: swap;
+  src: local("Pretendard Medium"),
+    url("assets/woff2-subset/Pretendard-Medium.subset.woff2") format("woff2"),
+    url("assets/woff-subset/Pretendard-Medium.subset.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 400;
+  font-display: swap;
+  src: local("Pretendard Regular"),
+    url("assets/woff2-subset/Pretendard-Regular.subset.woff2") format("woff2"),
+    url("assets/woff-subset/Pretendard-Regular.subset.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 300;
+  font-display: swap;
+  src: local("Pretendard Light"),
+    url("assets/woff2-subset/Pretendard-Light.subset.woff2") format("woff2"),
+    url("assets/woff-subset/Pretendard-Light.subset.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 200;
+  font-display: swap;
+  src: local("Pretendard ExtraLight"),
+    url("assets/woff2-subset/Pretendard-ExtraLight.subset.woff2")
+      format("woff2"),
+    url("assets/woff-subset/Pretendard-ExtraLight.subset.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 100;
+  font-display: swap;
+  src: local("Pretendard Thin"),
+    url("assets/woff2-subset/Pretendard-Thin.subset.woff2") format("woff2"),
+    url("assets/woff-subset/Pretendard-Thin.subset.woff") format("woff");
+}
+
 // Syntax highlighting @import is at the bottom of this file
 
 /**************/
@@ -21,7 +103,7 @@
 
 html {
   font-size: 110%;
-  font-family: "Apple SD Gothic Neo", Arial, sans-serif;
+  font-family: "Pretendard", "Apple SD Gothic Neo", Arial, sans-serif;
 
   scroll-behavior: smooth;
 }
@@ -36,15 +118,13 @@ body {
 }
 .container-top {
   margin: 0 auto;
-  max-width: 60%;
-  padding-top: 20px;
-  padding-right: 100px;
-  // width: 100%;
+  max-width: 820px;
+  padding: 12px 24px;
+  border-bottom: 1px solid #ececec;
 }
 .container {
   margin: 0 auto;
-  width: 768px;
-  padding: 0 10px;
+  max-width: 820px;
 }
 
 h1,
@@ -70,47 +150,76 @@ h3 {
 }
 //post
 .post {
-  padding: 50px 0;
+  padding: 24px;
 }
 
 .post i {
   color: yellow;
 }
 .post > h1 {
-  font-size: 1.6rem;
-  font-weight: 600;
+  font-size: 1.5rem;
+  font-weight: 700;
   letter-spacing: 2px;
+}
+.post blockquote {
+  margin: 1.8em 0.8em;
+  color: #949797;
+  font-size: 1.2rem;
+  font-style: italic;
 }
 .post h2 {
   font-size: 1.4rem;
   font-weight: 600;
 }
+.posts > .post {
+  margin: 18px 0;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.posts > .post:hover {
+  background-color: #fbfbfb;
+}
 .posts > .post h1 {
-  font-size: 1.6rem;
-  font-weight: 600;
+  font-size: 1.3rem;
+  font-weight: bold;
   letter-spacing: 2px;
   margin: 0;
   padding: 0;
 }
+.posts > .post .post_date {
+  font-size: 0.8rem;
+  letter-spacing: -0.1px;
+}
 
-.post p {
+.posts > .post > .tag {
+  font-size: 0.75rem;
+  font-style: italic;
+}
+
+.posts > .post blockquote {
+  margin: 1.2em 0 0 0;
+  padding: 0;
+  font-size: 1rem;
+  font-style: normal;
+}
+.post .entry > p {
   font-weight: 400;
-  // font-size: 1.125rem;
+  text-indent: 0.5em;
   line-height: 1.7;
   letter-spacing: -0.004em;
   overflow-wrap: break-word;
   word-break: break-all;
   font-size: 0.9375em;
   line-height: 2;
-  text-indent: 0.5em;
 }
 
 .post__user_date > .post__date {
+  font-size: 0.9rem;
   color: #acacac;
 }
 
 .post .post_date {
-  margin-top: 30px;
   letter-spacing: 1px;
   color: #acacac;
 }
@@ -120,7 +229,7 @@ h3 {
 }
 
 .post__user_date b {
-  font-size: 1.1em;
+  font-size: 0.9em;
 }
 
 .site-info > h1,
@@ -246,7 +355,7 @@ img {
 //
 
 .wrapper-masthead {
-  margin-bottom: 50px;
+  margin-bottom: 18px;
 }
 
 .masthead {
@@ -307,7 +416,7 @@ img {
 nav {
   float: right;
   margin-top: 23px; // @TODO: Vertically middle align
-  font-size: 18px;
+  font-size: 17px;
 
   @include mobile {
     float: none;
@@ -335,28 +444,12 @@ nav {
 // .main
 //
 
-.posts > .post {
-  // padding: 2em 0.5em;
-  border-bottom: 1px solid #2a2a2a;
-  // background-color: #47484c;
-}
-
 .posts > .post:last-child {
   padding-bottom: 1em;
   border-bottom: none;
 }
 
 .post {
-  blockquote {
-    margin: 1.8em 0.8em;
-    border-left: 2px solid $gray;
-    padding: 0.1em 1em;
-    color: #949797;
-    // color: $gray;
-    font-size: 22px;
-    font-style: italic;
-  }
-
   .comments {
     margin-top: 10px;
   }
