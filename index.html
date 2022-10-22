@@ -13,7 +13,9 @@ layout: default
 
     <div class="entry" style="clear: both">{{ post.excerpt }}</div>
 
-    <div class="tag">{{post.tag}}</div>
+    {% for tag in post.tags %}
+    <span class="tag">#{{tag}}</span>
+    {% endfor %}
   </article>
   {% endfor %}
 </div>
