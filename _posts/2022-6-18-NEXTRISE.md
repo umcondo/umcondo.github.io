@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 2022 NEXTRISE 글로벌 스타트업 페어 후기
+tag: [NEXTRISE, 후기]
 ---
 
 > 마포일자리 개발팀 차원에서 NEXTRISE를 참관하게 되었다.

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 블로그 만드는데 참고한 사이트 및 git, vim 명령어 사이트
+tag: [기술, 블로그]
 ---
 
 블로그 참고 : https://ahnslab.com/21-how-to-start-github-blog/
