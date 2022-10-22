@@ -3,19 +3,40 @@ layout: default
 ---
 
 <div class="posts">
-  {% for post in site.posts %}
+  {% for post in paginator.posts %}
+
   <article class="post">
-    <h1>
-      <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-    </h1>
+    <a href="{{ site.baseurl }}{{ post.url }}">
+      <h1>
+        {{ post.title }}
+        <!-- <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a> -->
+      </h1>
 
-    <div class="post_date">{{ post.date | date: "%Y년 %m월 %d일" }}</div>
+      <div class="post_date">{{ post.date | date: "%Y년 %m월 %d일" }}</div>
 
-    <div class="entry" style="clear: both">{{ post.excerpt }}</div>
+      <div class="entry" style="clear: both">{{ post.excerpt }}</div>
 
-    {% for tag in post.tags %}
-    <span class="tag">#{{tag}}</span>
-    {% endfor %}
+      {% for tag in post.tags %}
+      <span class="tag">#{{tag}}</span>
+      {% endfor %}
+    </a>
   </article>
   {% endfor %}
+</div>
+
+<!-- Pagination links -->
+<div class="pagination">
+  {% if paginator.previous_page %}
+  <a href="{{ paginator.previous_page_path }}" class="previous">이전</a>
+  {% else %}
+  <span class="previous">이전</span>
+  {% endif %}
+  <span class="page_number"
+    >{{ paginator.page }} of {{ paginator.total_pages }}</span
+  >
+  {% if paginator.next_page %}
+  <a href="{{ paginator.next_page_path }}" class="next">다음</a>
+  {% else %}
+  <span class="next">이전</span>
+  {% endif %}
 </div>
