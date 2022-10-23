@@ -4,15 +4,14 @@ layout: default
 
 <div class="tags">
   {% for tag in site.data.tags %}
-  <a href="/tag#{{tag}}">
+  <a href="#{{tag}}">
     <span class="tag" data-tag="{{tag}}">#{{tag}}</span>
   </a>
   {% endfor %}
 </div>
 
 <div class="posts">
-  {% for post in paginator.posts %}
-
+  {% for post in site.posts %}
   <article
     class="post"
     {%
@@ -40,8 +39,6 @@ layout: default
 
       <div class="post_date">{{ post.date | date: "%Y년 %m월 %d일" }}</div>
 
-      <div class="entry" style="clear: both">{{ post.excerpt }}</div>
-
       {% for tag in post.tags %} {% if site.data.tags contains tag %}
       <span class="tag" data-tag="{{tag}}">#{{tag}}</span>
       {% endif %} {% endfor %}
@@ -50,24 +47,20 @@ layout: default
   {% endfor %}
 </div>
 
-<!-- Pagination links -->
-<div class="pagination">
-  {% if paginator.previous_page %}
-  <a href="{{ paginator.previous_page_path }}" class="previous">이전</a>
-  {% else %}
-  <span class="previous">이전</span>
-  {% endif %}
-  <span class="page_number"
-    >{{ paginator.page }} of {{ paginator.total_pages }}</span
-  >
-  {% if paginator.next_page %}
-  <a href="{{ paginator.next_page_path }}" class="next">다음</a>
-  {% else %}
-  <span class="next">이전</span>
-  {% endif %}
-</div>
-
 <script>
+  let currentTag = "";
+  const queryString = decodeURI(location.href).split("#");
+  const queryTag = queryString[1] || "";
+  if (queryTag) {
+    currentTag = queryTag;
+    document.querySelectorAll(".tag").forEach((elm) => {
+      if (elm.dataset === currentTag) {
+        elm.classList.add("selected");
+      }
+    });
+    filterByTagName(currentTag);
+  }
+
   document.querySelectorAll(".tags .tag").forEach((elm) =>
     elm.addEventListener("click", (e) => {
       const currentTag = e.target.dataset.tag;
@@ -97,8 +90,13 @@ layout: default
     });
   }
 
-  // function updateQueryString(tagName) {
-  //   const path = `${location.protocol}//${location.host}${location.pathname}?tag=${tagName}`;
-  //   window.history.replaceState({ path }, "", path);
-  // }
+  // 로딩 후 url 쿼리 파라미터로 태그 정렬
+  //   window.addEventListener("load", () => {
+
+  // const queryString = location.search;
+  // const decodedQuery = decodeURI(queryString);
+  // const params = new URLSearchParams(decodedQuery);
+  // const queryTag = params.get("tag");
+
+  //   });
 </script>

@@ -210,12 +210,34 @@ h3 {
   letter-spacing: -0.1px;
 }
 
+.selected {
+  display: inline-block;
+}
+.hidden {
+  display: none;
+}
 .posts .post .tag {
   font-size: 0.75rem;
   font-style: italic;
   color: #212112;
 }
 
+.tags .tag {
+  margin: 2px;
+  display: inline-block;
+  background-color: #ededed;
+  border-radius: 14px;
+  padding: 2px 10px;
+  color: #212112;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #cacaca;
+  }
+}
+.tags .tag.selected {
+  background-color: #f9d9db;
+}
 .posts > .post blockquote {
   margin: 0;
   padding: 0;
