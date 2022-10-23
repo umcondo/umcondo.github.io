@@ -127,10 +127,6 @@ body {
   max-width: 820px;
 }
 
-.pagination {
-  margin-top: 50px;
-  text-align: center;
-}
 a {
   color: $blue;
   text-decoration: none;
@@ -223,7 +219,8 @@ h3 {
 }
 
 .tags .tag {
-  margin: 2px;
+  transition: 0.5s;
+  margin: 4px;
   display: inline-block;
   background-color: #ededed;
   border-radius: 14px;
@@ -315,6 +312,35 @@ code {
   color: #c9d1d9;
 }
 
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  color: #949797;
+  margin-top: 80px;
+  text-align: center;
+
+  a {
+    transition: 0.5s;
+    padding: 5px 20px;
+    border-radius: 15px;
+    color: #949797;
+    &:hover {
+      background-color: #ececec;
+    }
+  }
+
+  b,
+  span {
+    padding: 5px 20px;
+  }
+  b,
+  .prev,
+  .next {
+    color: #212121;
+  }
+}
 //////////////////////////////////////////////////// 기존 /////////////////////////////////////////////////////////
 
 ul,
